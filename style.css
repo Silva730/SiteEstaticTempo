@@ -1,0 +1,150 @@
+
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+  background: linear-gradient(#87CEEB, #50BFE6);
+  color: #fff;
+}
+
+
+#weather-container {
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 40px 60px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.5);
+  min-width: 300px;
+  max-width: 400px;
+}
+
+
+.search-box {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 10px 0 0 10px;
+  border: none;
+  outline: none;
+  width: 200px;
+  transition: 0.3s;
+}
+
+input[type="text"]:focus {
+  width: 240px;
+  background: rgba(255,255,255,0.2);
+  color: #fff;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  background-color: #FFD700;
+  color: #333;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #FFA500;
+}
+
+#weather {
+  margin-top: 25px;
+  font-size: 18px;
+}
+
+
+#animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+
+.sun {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 100px;
+  background: yellow;
+  border-radius: 50%;
+  animation: spin 20s linear infinite;
+}
+
+
+.cloud {
+  position: absolute;
+  width: 150px;
+  height: 60px;
+  background: #fff;
+  border-radius: 50px;
+  opacity: 0.8;
+  animation: moveClouds 60s linear infinite;
+}
+
+
+.raindrop {
+  position: absolute;
+  width: 2px;
+  height: 10px;
+  background: #00f;
+  animation: fall 1s linear infinite;
+}
+
+
+.moon {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  background: #F0E68C;
+  border-radius: 50%;
+  box-shadow: 0 0 20px #fff;
+  transform: translateX(-50%);
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+}
+
+
+@keyframes spin {
+  0% { transform: translateX(-50%) rotate(0deg); }
+  100% { transform: translateX(-50%) rotate(360deg); }
+}
+
+@keyframes moveClouds {
+  0% { left: -200px; }
+  100% { left: 100%; }
+}
+
+@keyframes fall {
+  0% { top: -10px; }
+  100% { top: 100%; }
+}
